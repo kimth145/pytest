@@ -3,7 +3,7 @@ name: Python CI
 on:
   push:
     branches:
-      - main  # プッシュイベントをどのブランチで検知するかを指定します。
+      - master  # プッシュイベントをどのブランチで検知するかを指定します。
 
 jobs:
   build:

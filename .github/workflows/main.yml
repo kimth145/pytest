@@ -3,23 +3,28 @@ name: Python CI
 on:
   push:
     branches:
-      - master
+      - main  # プッシュイベントをどのブランチで検知するかを指定します。
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # 使用する実行環境を選択します。
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: リポジトリをチェックアウト
+      uses: actions/checkout@v2  # GitHubリポジトリをチェックアウトするアクションを使用します。
 
-    - name: Set up Python
+    - name: Pythonをセットアップ
       uses: actions/setup-python@v2
       with:
-        python-version: 3.11.5
+        python-version: 3.11.5  # 使用したいPythonバージョンを選択します。
 
-    - name: Install dependencies
-      run: pip install -r requirements.txt
+    - name: 依存関係をインストール
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # 必要なパッケージをインストールします。
 
-    - name: Run tests
-      run: pytest
+    - name: pytestを実行
+      run: pytest  # pytestを実行します。
+
+    - name: flake8を実行
+      run: flake8  # コードのスタイルをチェックするためにflake8を実行します。

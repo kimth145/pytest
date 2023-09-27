@@ -7,5 +7,5 @@ def test_add():
 
 
 def test_user_info():
-    result = user_info("Kim")
-    assert result == {"Hello": "Kim"}
+    result = user_info("Kim1")
+    assert result == {"Hello": "Kim1"}

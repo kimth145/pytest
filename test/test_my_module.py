@@ -10,4 +10,4 @@ def test_add():
 
 def test_user_info():    
     result = user_info("Kim1")
-    assert result == {"Hello": "Kim2"}
+    assert result == {"Hello": "Kim1"}
